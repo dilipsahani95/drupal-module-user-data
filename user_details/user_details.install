@@ -1,0 +1,55 @@
+<?php
+
+/**
+ * Implements hook_schema()
+ */
+function user_details_schema() {
+  $schema['user_details_db'] = array(
+    'description' => 'Stores user details in custom table',
+    'fields' => array(
+      'id' => array(
+        'type' => 'serial',
+        'not null' => TRUE,
+        'description' => t('Id'),
+        'unsigned' => TRUE,
+      ),
+      'first_name' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'First name of user.',
+      ),
+      'last_name' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'Last name of user.',
+      ),
+       'dob' => array(
+        'type' => 'date',
+        'mysql_type' => 'date',
+        'not null' => TRUE,
+        'description' => 'Date of birth of user.',
+      ),
+      'age' => array(
+        'type' => 'varchar',
+        'length' => 4,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'Age of user.',
+      ),
+      'mobile_no' => array(
+        'type' => 'varchar',
+        'length' => 10,
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'Mobile number of user.',
+      ),
+    ),
+    'primary key' => array('id'),
+  );
+
+  return $schema;
+}

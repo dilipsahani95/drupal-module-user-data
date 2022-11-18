@@ -1,0 +1,23 @@
+user_details.basic_info:
+  path: '/user-details'
+  defaults:
+    _title: 'User Information'
+    _form: '\Drupal\user_details\Form\UserInfoForm'
+  requirements:
+    _permission: 'access content'
+
+user_details.display_table_controller:
+  path: '/user-details/display/table'
+  defaults:
+    _controller: '\Drupal\user_details\Controller\DisplayUserTableController::display'
+    _title: 'Display User Data'
+  requirements:
+    _permission: 'access content'
+
+user_details.user_delete_form:
+  path: '/user-details/form/delete/{cid}'
+  defaults:
+    _form: '\Drupal\user_details\Form\UserDeleteForm'
+    _title: 'User Delete Form'
+  requirements:
+    _permission: 'access content'
